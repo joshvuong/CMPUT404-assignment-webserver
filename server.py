@@ -51,16 +51,6 @@ class MyWebServer(socketserver.BaseRequestHandler):
         return response, location
     
     def handle_ok(self, user_path):
-        # if user_path == './':
-        #     www_path = './www/'
-        #     content_type = 'text/html' if user_path.endswith('.html') else 'text/css'
-        #     with open(www_path + 'index.html', 'r') as file:
-        #         content = file.read()
-        #     response = 'HTTP/1.1 200 OK Not FOUND!' + '\r\n'
-        #     response += 'Location: ' + user_path + '\r\n'
-        #     response += content
-        #     response += 'Content-type: ' + content_type + '\r\n'
-        #     response += 'Connection: close' + '\r\n\r\n'
         if path.isfile(user_path + 'index.html'):
             content_type = 'text/html' if user_path.endswith('.html') else 'text/css'
             with open(user_path + 'index.html', 'r') as file:
